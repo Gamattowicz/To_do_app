@@ -1,8 +1,12 @@
-//Add
+//Function adding tasks to list
 const inputAdd = document.querySelector('input.add')
 const btnAdd = document.querySelector('button.add');
 const ul = document.querySelector('ul');
 
+
+const rmvBtn = (e) => {
+    e.target.parentElement.remove();
+}
 const addTask = (e) => {
     e.preventDefault();
     const task = inputAdd.value;
@@ -11,10 +15,11 @@ const addTask = (e) => {
     }
     const li = document.createElement('li');
     li.textContent = task;
-    const buttonRmv = document.createElement('button');
-    buttonRmv.classList = 'delete';
-    buttonRmv.textContent = 'Remove';
-    li.appendChild(buttonRmv)
+    const btnRmv = document.createElement('button');
+    btnRmv.classList = 'delete';
+    btnRmv.textContent = 'Remove';
+    btnRmv.addEventListener('click', rmvBtn);
+    li.appendChild(btnRmv)
     ul.appendChild(li);
     inputAdd.value = '';
 }
