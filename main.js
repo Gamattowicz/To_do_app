@@ -1,15 +1,14 @@
 const inputAdd = document.querySelector('input.add')
 const btnAdd = document.querySelector('button.add');
 const ul = document.querySelector('ul');
-let number = 0;
+const taskNumber = document.querySelector('h2 span');
 let listLi;
 
 //Function removing tasks from list by click to button 
 const rmvBtn = (e) => {
     e.target.parentElement.remove();
-    number--;
-    document.querySelector('h2 span').textContent = number;
     listLi = [...document.querySelectorAll('li')];
+    taskNumber.textContent = document.getElementsByClassName('task').length;
 }
 
 //Function adding strikethrough
@@ -25,6 +24,7 @@ const addTask = (e) => {
         return alert('You have to enter task')
     }
     const li = document.createElement('li');
+    li.className = 'task';
     li.textContent = task;
     const btnRmv = document.createElement('button');
     btnRmv.classList = 'delete';
@@ -33,10 +33,10 @@ const addTask = (e) => {
     li.addEventListener('click', taskDone);
     li.appendChild(btnRmv)
     ul.appendChild(li);
-    number++;
-    document.querySelector('h2 span').textContent = number;
+    taskNumber.textContent = document.getElementsByClassName('task').length;
     inputAdd.value = '';
     listLi = [...document.querySelectorAll('li')];
+    console.log([...document.querySelectorAll('li')].lenght);
 }
 
 btnAdd.addEventListener('click', addTask);
@@ -48,13 +48,11 @@ const searchTask = (e) => {
     let result = listLi.filter(li =>
         li.textContent.toLowerCase().includes(e.target.value.toLowerCase())
     )
-    console.log(result);
     ul.textContent = '';
     result.forEach(li => {
         ul.appendChild(li)
     })
-
+    taskNumber.textContent = document.getElementsByClassName('task').length;
 }
-
 
 inputSrc.addEventListener('input', searchTask);
