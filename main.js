@@ -8,7 +8,7 @@ let listLi;
 const rmvBtn = (e) => {
     e.target.parentElement.remove();
     listLi = [...document.querySelectorAll('li')];
-    taskNumber.textContent = document.getElementsByClassName('task').length;
+    taskNumber.textContent = listLi.length;
 }
 
 //Function adding strikethrough
@@ -24,7 +24,6 @@ const addTask = (e) => {
         return alert('You have to enter task')
     }
     const li = document.createElement('li');
-    li.className = 'task';
     li.textContent = task;
     const btnRmv = document.createElement('button');
     btnRmv.classList = 'delete';
@@ -33,10 +32,9 @@ const addTask = (e) => {
     li.addEventListener('click', taskDone);
     li.appendChild(btnRmv)
     ul.appendChild(li);
-    taskNumber.textContent = document.getElementsByClassName('task').length;
     inputAdd.value = '';
     listLi = [...document.querySelectorAll('li')];
-    console.log([...document.querySelectorAll('li')].lenght);
+    taskNumber.textContent = listLi.length;
 }
 
 btnAdd.addEventListener('click', addTask);
@@ -52,7 +50,7 @@ const searchTask = (e) => {
     result.forEach(li => {
         ul.appendChild(li)
     })
-    taskNumber.textContent = document.getElementsByClassName('task').length;
+    taskNumber.textContent = [...document.querySelectorAll('li')].length;
 }
 
 inputSrc.addEventListener('input', searchTask);
