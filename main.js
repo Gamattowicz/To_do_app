@@ -7,15 +7,13 @@ let listLi;
 //Function removing tasks from list by click to button 
 const rmvBtn = (e) => {
     e.target.parentNode.remove();
-    console.log(e.target.parentElement);
-
     listLi = [...document.querySelectorAll('li')];
     taskNumber.textContent = listLi.length;
 }
 
 //Function adding strikethrough
 const taskDone = function (e) {
-    e.target.parentNode.style.textDecoration = 'line-through';
+    e.target.parentNode.classList.toggle('done');
 }
 
 //Function adding tasks to list

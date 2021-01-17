@@ -1,8 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* font-family: 'Andika New Basic',
+sans-serif; */
+/* font-family: 'Montserrat',
+sans-serif; */
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: RGB(223, 207, 190);
+    position: relative;
+    background-color: #DEDBD8;
+    font-family: 'Montserrat', sans-serif;
+}
+
+div.number {
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    color: #524632;
+    font-family: 'Andika New Basic', sans-serif;
+    text-align: center;
+}
+
+div.add form.add {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
+}
+
+form.add input.add {
+    height: 25px;
+    width: 90%;
+    background-color: #C3C49E;
+    border: 2px solid black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form.add input.add:focus {
+    border: 3px solid black;
+}
+
+form.add button.add {
+    position: absolute;
+    cursor: pointer;
+    margin-left: 10px;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #8F7E4F;
+    font-size: 20px;
+    transform: translateY(-50%);
+    outline: none;
+    transition: .3s;
+}
+
+form.add button.add:active {
+    color: #DEDBD8;
+}
+
+div.search {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
+}
+
+div.search input.search {
+    width: 90%;
+    height: 25px;
+    background-color: #C3C49E;
+    border: 2px solid black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+div.search input.search:focus {
+    border: 3px solid black;
+}
+
+div.list {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
+}
+
+ul {
+    width: 90%;
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    height: 25px;
+}
+
+li:hover {
+    background-color: #8F7E4F;
+    color: #D8FFDD;
+}
+
+li.done {
+    text-decoration: line-through;
+}
+
+i.far {
+    position: absolute;
+    right: 0%;
+    color: green;
+}
+
+I.fas {
+    position: absolute;
+    right: 5%;
+    color: red;
 }
