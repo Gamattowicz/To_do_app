@@ -6,14 +6,16 @@ let listLi;
 
 //Function removing tasks from list by click to button 
 const rmvBtn = (e) => {
-    e.target.parentElement.remove();
+    e.target.parentNode.remove();
+    console.log(e.target.parentElement);
+
     listLi = [...document.querySelectorAll('li')];
     taskNumber.textContent = listLi.length;
 }
 
 //Function adding strikethrough
-const taskDone = function () {
-    this.style.textDecoration = 'line-through';
+const taskDone = function (e) {
+    e.target.parentNode.style.textDecoration = 'line-through';
 }
 
 //Function adding tasks to list
@@ -24,13 +26,9 @@ const addTask = (e) => {
         return alert('You have to enter task')
     }
     const li = document.createElement('li');
-    li.textContent = task;
-    const btnRmv = document.createElement('button');
-    btnRmv.classList = 'delete';
-    btnRmv.textContent = 'Remove';
-    btnRmv.addEventListener('click', rmvBtn);
-    li.addEventListener('click', taskDone);
-    li.appendChild(btnRmv)
+    li.innerHTML = task + `<i class="fas fa-minus-circle"></i> <i class="far fa-check-circle"></i>`;
+    li.querySelector('i.fas').addEventListener('click', rmvBtn);
+    li.querySelector('i.far').addEventListener('click', taskDone);
     ul.appendChild(li);
     inputAdd.value = '';
     listLi = [...document.querySelectorAll('li')];
