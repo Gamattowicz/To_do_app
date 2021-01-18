@@ -20,7 +20,7 @@ JavaScript **To-do app** with search option created during course from [@Samuraj
 ## Demo
 Check demo here: [Game](https://gamattowicz.github.io/To_do_app/)
 
-<img alt="Game screen" src="https://github.com/Gamattowicz/Rock_Paper_Scissors/blob/main/Project_screen.jpg"/>
+<img alt="Game screen" src="https://github.com/Gamattowicz/To_do_app/blob/main/img/Project_screen.JPG"/>
 
 ## Status 
 Project is finished.
