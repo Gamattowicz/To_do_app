@@ -18,9 +18,9 @@ JavaScript **To-do app** with search option created during course from [@Samuraj
 * JavaScript ES5/6
 
 ## Demo
-Check demo here: [Game](https://gamattowicz.github.io/To_do_app/)
+Check demo here: [Project](https://gamattowicz.github.io/To_do_app/)
 
-<img alt="Game screen" src="https://github.com/Gamattowicz/To_do_app/blob/main/img/Project_screen.JPG"/>
+<img alt="Project" src="https://github.com/Gamattowicz/To_do_app/blob/main/img/Project_screen.JPG"/>
 
 ## Status 
 Project is finished.
